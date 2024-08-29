@@ -1,0 +1,15 @@
+.card-con{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-left: 120px;
+    margin-top: 50px;
+  
+}
+
+.detailsfor_new{
+    margin-top:50px;
+    margin-left:40px ;
+
+
+}
