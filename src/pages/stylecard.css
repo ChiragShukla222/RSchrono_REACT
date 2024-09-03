@@ -2,7 +2,7 @@
     display:flex;
     flex-wrap: wrap;
     gap: 4rem;
-    margin-left: 120px;
+    margin-left: 10px;
     margin-top: 50px;
   
 }
@@ -12,4 +12,121 @@
     margin-left:40px ;
 
 
+}
+/* for the alignment foe the sec crousel */
+.carousel-item {
+    min-height: 300px;
+  }
+  
+  .carousel-card {
+    margin: 0 auto; /* Center the card */
+  }
+  
+/* for the alignment foe the sec crousel */
+.json-carousel .carousel-control-prev,
+.json-carousel .carousel-control-next {
+  filter: brightness(5) invert(1); /* Darker arrows */
+}
+
+.json-carousel .carousel-control-prev-icon,
+.json-carousel .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.6); /* Darker background for better visibility */
+}
+/* to flip the imag */
+.flip-container {
+  perspective: 1000px; /* This defines the perspective for the 3D effect */
+  width: 18rem;
+}
+
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-container:hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back side when facing away */
+}
+
+.front {
+  z-index: 2; /* Make sure the front side is on top */
+}
+
+.back {
+  transform: rotateY(180deg); /* Rotate the back side so it's hidden by default */
+  z-index: 1;
+  /* Style the back side as needed */
+}
+
+.back-content {
+  padding: 20px;
+  text-align: center;
+  background: #f8f9fa; /* Background color for the back side */
+}
+/* for alignment of the prodimag */
+.prodetails_home {
+  display: flex;
+  justify-content: space-between; /* Space between the carousel and text */
+  align-items: center; /* Vertically center the content */
+  padding: 20px; /* Add some padding around the container */
+  gap: 20px; /* Add some space between the two divs */
+}
+
+.sideproductimage {
+  flex: 1; /* Allow the carousel to take up available space */
+  max-width: 500px; /* Ensure the carousel doesn't exceed 500px width */
+}
+
+.json-carousel {
+  width: 100%; /* Make the carousel fill the parent div */
+}
+
+.carousel-card {
+  width: 100%; /* Make the card fill the carousel item */
+  height: auto;
+}
+
+.protext_blackwatch {
+  flex: 1; /* Allow the text section to take up the remaining space */
+  max-width: 600px; /* Limit the text section's width */
+  padding: 20px;
+}
+
+.protext_blackwatch h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.protext_blackwatch p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.protext_blackwatch h2 {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .prodetails_home {
+    flex-direction: column; /* Stack the content vertically on smaller screens */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .sideproductimage, .protext_blackwatch {
+    max-width: 100%;
+  }
 }
