@@ -21,4 +21,4 @@ const addToCart = ({
 })
 
 export default addToCart.reducer;
-// export const{addCartData} = addToCart.actions;
+export const{addCartData} = addToCart.actions;
