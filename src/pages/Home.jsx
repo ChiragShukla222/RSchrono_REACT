@@ -6,7 +6,7 @@ import axios from 'axios';
 import "./stylecard.css";
 
 import { useDispatch } from 'react-redux';
-// import { addToCart } from '../addToCartSlice';
+
 
 const Home = () => {
   const [index, setIndex] = useState(0);
@@ -43,9 +43,7 @@ const Home = () => {
     }
   }
 // for the dispatch of add to cart data from the addtocartslice
-const addDataToCart=(id, name, cate,  price,  image)=>{
-  dispatch(addToCart({id:id, name:name, category:cate, price:price,image:image, qnty:1}))
-}
+
 
 
 
