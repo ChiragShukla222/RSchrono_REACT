@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router-dom';
 const TopHeader = () => {
   const navigate = useNavigate()
 
-  const mycart=()=>{
+  const myCart=()=>{
     navigate("/mycart");
   }
   return (
@@ -65,7 +65,7 @@ const TopHeader = () => {
             <FaUser />
             </Nav.Link>
             <Nav.Link  href="#memes">
-            <a href='#' onClick={mycart}>
+            <a href='#' onClick={myCart}>
             <FaShoppingCart />
             </a> 
             

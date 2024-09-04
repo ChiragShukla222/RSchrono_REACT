@@ -1,24 +1,22 @@
-import React from 'react'
-import { createSlice } from '@reduxjs/toolkit'
-const addToCart = ({
+import { createSlice } from "@reduxjs/toolkit";
 
-    name:"addcart",
-    initialState:{
-        cart:[]
+const initialState = {
+    cart: [],
+};
+
+const addToCartSlice = createSlice({
+    name: "cart",
+    initialState,
+    reducers: {
+        addToCart: (state, action) => {
+            state.cart.push(action.payload);
+            console.log(action.payload)
+        },
+        removeformCart: (state, action) => {
+            state.cart = state.cart.filter((item) => item.id !== action.payload);
+        },
     },
-    reducers:{
-        addCartData:(state,action)=>{
-            const mycart = state.cart.filter((key)=>{
-                if(key.id==action.payload.id){
-                    return true
-                }
-            })
-            if(mycart.length==0){
-                alert("add somethingng")
-            }
-        }
-    }
-})
+});
 
-export default addToCart.reducer;
-export const{addCartData} = addToCart.actions;
+export const { addToCart ,removeformCart} = addToCartSlice.actions;
+export default addToCartSlice.reducer;
