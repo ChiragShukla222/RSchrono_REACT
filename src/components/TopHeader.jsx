@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -11,13 +10,34 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
 import {Link,Outlet} from "react-router-dom"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
+
+
 const TopHeader = () => {
   const navigate = useNavigate()
 
   const myCart=()=>{
     navigate("/mycart");
   }
+ 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+    const [searchquery , setsearchquery]=useState("");
+    const search=()=>{
+      navigate(`/search/${searchquery}`);
+    }
+      console.log(searchquery);
+
+
+
+
+
   return (
     <>
     
@@ -47,22 +67,16 @@ const TopHeader = () => {
             </Nav>
             {/* loggogogo */}
             <Navbar.Brand href="#"><img src={Logo} alt="" style={{width:"200px", marginRight:"390px"}}/></Navbar.Brand>
-            {/* <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form> */}
-            {/* for search side icons */}
+         
             <Nav>
             <Nav.Link href="#deets">
-            <IoSearch />
+              <a href="#" onClick={handleShow}><IoSearch /></a>
+          
             </Nav.Link>
+            
             <Nav.Link href="#deets">
             <FaUser />
+
             </Nav.Link>
             <Nav.Link  href="#memes">
             <a href='#' onClick={myCart}>
@@ -80,6 +94,35 @@ const TopHeader = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+
+      {/* modal */}
+     
+
+      <Modal show={show} onHide={handleClose} style={{marginTop:"100px"}}>
+        <Modal.Header closeButton>
+          <Modal.Title>Search BY:
+            <input type="text"value={searchquery} onChange={(e)=>setsearchquery(e.target.value)} />
+            <IoSearch onClick={search} style={{cursor:"pointer"}} />
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <a href="#planet series"style={{textDecoration:"none"}}>Planet Series</a>
+            <br />
+            <a href="#Best Selling"style={{textDecoration:"none"}}>Best Seller</a>
+            <br />
+            <a href="#customOptions"style={{textDecoration:"none"}}>Custom Options</a>       
+   
+        </Modal.Body>
+        {/* <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer> */}
+      </Modal>
+      
     </>
   );
 }

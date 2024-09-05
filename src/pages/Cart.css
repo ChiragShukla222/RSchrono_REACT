@@ -1,0 +1,142 @@
+/* Cart Page Styles */
+
+#cart-container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: white !important;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  #cart-container h2 {
+    color: #333 !important;
+    font-size: 24px !important;
+    text-align: center;
+    margin-bottom: 20px !important;
+  }
+  
+  #cart-container h3 {
+    color: #555 !important;
+    font-size: 20px !important;
+    margin-top: 20px !important;
+  }
+  
+  #cart-container table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 20px 0 !important;
+  }
+  
+  #cart-container thead th {
+    background-color: #007bff !important;
+    color: white !important;
+    padding: 12px !important;
+    text-align: center !important;
+    font-size: 18px !important;
+  }
+  
+  #cart-container tbody td {
+    padding: 12px !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    color: #555 !important;
+  }
+  
+  #cart-container tbody tr {
+    border-bottom: 1px solid #ddd !important;
+  }
+  
+  #cart-container tbody tr:last-child {
+    border-bottom: none !important;
+  }
+  
+  #cart-container img {
+    border-radius: 5px !important;
+    transition: transform 0.3s ease !important;
+  }
+  
+  #cart-container img:hover {
+    transform: scale(1.1) !important;
+  }
+  
+  /* Buttons for +, -, Remove */
+  #cart-container button {
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+  }
+  
+  #cart-container button span {
+    font-size: 18px !important;
+  }
+  
+  #cart-container button:hover {
+    background-color: #007bff !important;
+    color: white !important;
+    transition: background-color 0.3s ease !important;
+  }
+  
+  #cart-container .btn-danger {
+    background-color: #dc3545 !important;
+    color: white !important;
+  }
+  
+  #cart-container .btn-danger:hover {
+    background-color: #c82333 !important;
+  }
+  
+  #cart-container button:focus {
+    outline: none !important;
+  }
+  .inn{
+    display:flex;
+    gap:10px;
+    justify-content: center;
+    justify-content: space-between;
+  }
+  
+  /* Total Display */
+  #cart-container #total-summary {
+    margin-top: 20px !important;
+    display: flex !important;
+    justify-content: space-around !important;
+    font-size: 18px !important;
+    color: #333 !important;
+  }
+  
+  #cart-container #total-summary h3 {
+    margin: 0 !important;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    #cart-container {
+      width: 95% !important;
+    }
+  
+    #cart-container table {
+      font-size: 14px !important;
+    }
+  
+    #cart-container button {
+      padding: 4px 8px !important;
+      font-size: 12px !important;
+    }
+  
+    #cart-container img {
+      width: 40px !important;
+      height: 40px !important;
+    }
+  
+    #cart-container h2 {
+      font-size: 20px !important;
+    }
+  
+    #cart-container h3 {
+      font-size: 18px !important;
+    }
+  }
+  

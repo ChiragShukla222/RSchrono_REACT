@@ -5,10 +5,31 @@ import Card from 'react-bootstrap/Card';
 import axios from 'axios';
 import "./stylecard.css";
 
+import {addToCart, removeformCart} from "../addToCartSlice";
 import { useDispatch } from 'react-redux';
 
 
 const Home = () => {
+
+
+    const dispatch = useDispatch();
+    const addToCartData = (id, name, category, price, image) => {
+      console.log(id, name, category, price, image);
+      const actions= addToCart({ id, name, category, price, image,qnty:1 })
+      dispatch(actions);
+    }
+   
+
+
+
+
+
+
+
+
+
+
+
   const [index, setIndex] = useState(0);
   const [watchData, setWatchData] = useState([]);
   const handleSelect = (selectedIndex) => {
@@ -99,12 +120,12 @@ const productRender=()=>{
             <Card.Title>{item.name || "Card Title"}</Card.Title>
             <Card.Text>{item.category|| "Some quick example text to build on the card title and make up the bulk of the card's content."}</Card.Text>
             <Card.Text>RS.{item.price|| "price."}</Card.Text>
-            <Button variant="secondary" style={{borderRadius:"1 rem",width:"110px"}} onClick={()=>{addDataToCart(item.id, item.name, item.category, item.price, item.image)}}>Add to cart</Button>
+            <Button variant="secondary" style={{borderRadius:"1 rem",width:"110px"}} onClick={()=>{addToCartData(item.id, item.name, item.category, item.price, item.image)}}>Add to cart</Button>
           </Card.Body>
         </Card>
       ));
       slides.push(
-        <Carousel.Item key={i} style={{ minHeight: '500px' }} className="json-carousel" setInterval={1000} data-bs-theme="dark">
+        <Carousel.Item key={i} style={{ minHeight: '500px' }} className="json-carousel" setInterval={100} data-bs-theme="dark">
           <div className="d-flex justify-content-center">
             {cards}
           </div>
