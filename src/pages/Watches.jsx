@@ -101,7 +101,7 @@ const Watches = () => {
         style={{
           width: '100%',
           height: 'auto',
-          height:"800px",
+          
           borderRadius: '50px', // Rounded corners
           padding: '5px', // Space between border and image
         }}
